@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans | Toogle VPN</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #f8961e;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #f4f4f4;
+            --border: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: white; color: #333; line-height: 1.6; }
+
+        /* Navigation */
+       nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 10%;
+            background: var(--dark);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { Display:Flex;
+            align-items: Center;
+            gap: 10Px;
+            text-decoration: none;
+            font-weight:bold;
+
+            color: var(--primary); font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li a { color: white; text-decoration: none; margin: 0 15px; transition: 0.3s; }
+        .nav-links li a:hover { color: var(--primary); }
+        .btn-cta { background: var(--primary); color: white !important; padding: 8px 20px; border-radius: 5px; font-weight: bold; }
+        .logo-img{
+            height: 30px;
+            width: auto;
+            
+        }
+        /* Pricing Header */
+        .pricing-header { text-align: center; padding: 60px 10% 40px; background: var(--gray); }
+        .pricing-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        /* Pricing Cards */
+        .pricing-container { display: flex; justify-content: center; gap: 25px; padding: 50px 10%; flex-wrap: wrap; margin-top: -80px; }
+        .p-card { 
+            background: white; border: 1px solid var(--border); border-radius: 15px; padding: 40px 30px; 
+            width: 320px; text-align: center; position: relative; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .p-card.popular { border: 3px solid var(--primary); transform: scale(1.05); z-index: 2; }
+        
+        .most-popular-badge {
+            background: var(--primary); color: white; position: absolute; top: -15px; 
+            left: 50%; transform: translateX(-50%); padding: 5px 20px; border-radius: 20px;
+            font-size: 0.8rem; font-weight: bold;
+        }
+
+        .p-card h3 { margin-bottom: 15px; color: #555; }
+        .price { font-size: 3.5rem; font-weight: 800; margin-bottom: 10px; }
+        .price span { font-size: 1rem; color: #888; }
+        .billing { color: #888; font-size: 0.9rem; margin-bottom: 25px; min-height: 40px; }
+
+        .btn { 
+            display: block; background: var(--dark); color: white; padding: 15px; 
+            border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;
+        }
+        .p-card.popular .btn { background: var(--primary); }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* Feature Comparison Table */
+        .comparison-section { padding: 80px 10%; }
+        .comparison-section h2 { text-align: center; margin-bottom: 50px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 20px; border-bottom: 1px solid var(--border); text-align: left; }
+        th { background: var(--gray); font-size: 1.1rem; }
+        .check { color: #2ecc71; font-size: 1.2rem; }
+        .times { color: #e74c3c; font-size: 1.2rem; }
+
+        /* Refund Policy CTA */
+        .refund-cta { 
+            background: var(--dark); color: white; margin: 40px 10%; padding: 50px; 
+            border-radius: 20px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .refund-text h2 { color: var(--primary); margin-bottom: 10px; }
+        .refund-btn { 
+            background: transparent; border: 2px solid var(--primary); color: var(--primary); 
+            padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s;
+        }
+        .refund-btn:hover { background: var(--primary); color: white; }
+
+        @media (max-width: 768px) {
+            .pricing-container { margin-top: 0; }
+            .p-card.popular { transform: scale(1); }
+            .refund-cta { flex-direction: column; text-align: center; gap: 30px; }
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="toggle VPN LOGO" class="logo-img">
+            Toggle VPN
+        </a>
+         <ul class="nav-links">
+            <li><a href="#Privacy">Privacy & Condition</a></li>
+            <li><a href="#Pricing">Pricing</a></li>
+            <li><a href="#About Us">About Us</a></li>
+            <li><a href="#" class="btn-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <header class="pricing-header">
+        <h1>Choose Your Protection</h1>
+        <p>Simple pricing. No hidden fees. 30-day money-back guarantee.</p>
+    </header>
+
+    <section class="pricing-container mt-10 ">
+        <div class="p-card">
+            <h3>Monthly</h3>
+            <div class="price">$12.99<span>/mo</span></div>
+            <p class="billing">Billed every month.</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+
+        <div class="p-card popular">
+            <div class="most-popular-badge">MOST POPULAR</div>
+            <h3>2-Year Plan</h3>
+            <div class="price">$2.99<span>/mo</span></div>
+            <p class="billing">Save 77%! $71.76 billed every 24 months.</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+
+        <div class="p-card">
+            <h3>1-Year Plan</h3>
+            <div class="price">$4.49<span>/mo</span></div>
+            <p class="billing">Billed $53.88 per year.</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <h2>Compare Plan Features</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Features</th>
+                    <th>Monthly</th>
+                    <th>1-Year</th>
+                    <th>2-Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Simultaneous Connections</td>
+                    <td>5 Devices</td>
+                    <td>8 Devices</td>
+                    <td>10 Devices</td>
+                </tr>
+                <tr>
+                    <td>High-Speed Servers (10Gbps)</td>
+                    <td><i class="fas fa-check check"></i></td>
+                    <td><i class="fas fa-check check"></i></td>
+                    <td><i class="fas fa-check check"></i></td>
+                </tr>
+                <tr>
+                    <td>Ad & Malware Blocker</td>
+                    <td><i class="fas fa-times times"></i></td>
+                    <td><i class="fas fa-check check"></i></td>
+                    <td><i class="fas fa-check check"></i></td>
+                </tr>
+                <tr>
+                    <td>Dedicated IP Support</td>
+                    <td><i class="fas fa-times times"></i></td>
+                    <td><i class="fas fa-times times"></i></td>
+                    <td><i class="fas fa-check check"></i></td>
+                </tr>
+                <tr>
+                    <td>24/7 Priority Support</td>
+                    <td>Standard</td>
+                    <td>Standard</td>
+                    <td>Priority</td>
+                </tr>
+                <tr>
+                    <td>Smart DNS for TV</td>
+                    <td><i class="fas fa-times times"></i></td>
+                    <td><i class="fas fa-check check"></i></td>
+                    <td><i class="fas fa-check check"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="refund-cta">
+        <div class="refund-text">
+            <h2>Risk-Free for 30 Days</h2>
+            <p>Not satisfied with Toogle VPN? We'll refund every penny, no questions asked.</p>
+        </div>
+        <a href="#" class="refund-btn">Read Refund Policy</a>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #888;">
+        <p>&copy; 2026 Toogle VPN. Securely encrypted.</p>
+    </footer>
+
+</body>
+</html>
