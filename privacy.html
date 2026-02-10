@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Toogle VPN</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #f8961e;
+            --dark: #1a1a1a;
+            --text: #333;
+            --light-gray: #f9f9f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { color: var(--text); line-height: 1.8; }
+
+        nav { background: var(--dark); padding: 1rem 10%; display: flex; justify-content: space-between; align-items: center; }
+    
+     
+        .policy-header { background: var(--light-gray); padding: 60px 10%; text-align: center; border-bottom: 1px solid #ddd; }
+        .policy-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .last-updated { color: #888; font-style: italic; }
+
+        .policy-container { display: grid; grid-template-columns: 1fr 300px; gap: 50px; padding: 60px 10%; }
+
+        .policy-content h2 { margin: 30px 0 15px; color: var(--dark); font-size: 1.8rem; }
+        .policy-content p { margin-bottom: 20px; color: #555; }
+        .policy-content ul { margin-bottom: 20px; padding-left: 20px; }
+        .policy-content li { margin-bottom: 10px; }
+        .logo { color: var(--primary); font-size: 1.5rem; font-weight: bold; text-decoration: none; Display:Flex;
+            align-items: Center;
+            gap: 10Px;
+            text-decoration: none;
+            font-weight:bold;}
+            .logo-img{
+            height: 30px;
+            width: auto;
+            }
+            nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 10%;
+            background: var(--dark);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { Display:Flex;
+            align-items: Center;
+            gap: 10Px;
+            text-decoration: none;
+            font-weight:bold;
+
+            color: var(--primary); font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li a { color: white; text-decoration: none; margin: 0 15px; transition: 0.3s; }
+        .nav-links li a:hover { color: var(--primary); }
+        .btn-cta { background: var(--primary); color: white !important; padding: 8px 20px; border-radius: 5px; font-weight: bold; }
+        .logo-img{
+            height: 30px;
+            width: auto;
+            
+        }
+
+
+        /* Quick Summary Box */
+        .summary-box { 
+            background: var(--dark); color: white; padding: 30px; border-radius: 15px; 
+            height: fit-content; position: sticky; top: 20px;
+        }
+        .summary-box h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; }
+        .summary-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; font-size: 0.9rem; }
+        .summary-item i { color: var(--primary); margin-top: 5px; }
+
+        .highlight { color: var(--primary); font-weight: bold; }
+
+        @media (max-width: 900px) {
+            .policy-container { grid-template-columns: 1fr; }
+            .summary-box { position: static; order: -1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="toggle VPN LOGO" class="logo-img">
+            Toggle VPN
+        </a>
+        <ul class="nav-links">
+            <li><a href="#Privacy">Privacy & Condition</a></li>
+            <li><a href="#Pricing">Pricing</a></li>
+            <li><a href="#About Us">About Us</a></li>
+            <li><a href="#" class="btn-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <header class="policy-header">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: February 9, 2026</p>
+    </header>
+
+    <div class="policy-container">
+        <main class="policy-content">
+            <section>
+                <h2>1. Our No-Logs Commitment</h2>
+                <p>At <span class="highlight">Toogle VPN</span>, we operate under a strict <strong>No-Logs Policy</strong>. Our systems are engineered to ensure that we do not store your private data. Because we do not collect this information, we cannot be compelled to provide data that does not exist.</p>
+                <p><strong>What we NEVER collect:</strong></p>
+                <ul>
+                    <li>Your IP address (source or VPN).</li>
+                    <li>Your browsing history or destination websites.</li>
+                    <li>The content of your data or DNS queries.</li>
+                    <li>Connection timestamps or session durations.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>2. Data We Do Collect</h2>
+                <p>To provide our service, we collect the bare minimum amount of information required for account management:</p>
+                <ul>
+                    <li><strong>Email Address:</strong> Used for account login and password recovery.</li>
+                    <li><strong>Payment Data:</strong> Processed via third-party providers. We do not store your full credit card details on our servers.</li>
+                    <li><strong>Aggregated Stats:</strong> We monitor total server load to ensure performance, but this is never tied to an individual user.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. RAM-Only Infrastructure</h2>
+                <p>Toogle VPN utilizes RAM-only servers. Unlike traditional servers that write to hard drives, our stack runs entirely in volatile memory. If a server is powered down or seized, all session data is instantly wiped and unrecoverable.</p>
+            </section>
+
+            <section>
+                <h2>4. Jurisdictional Protection</h2>
+                <p>Toogle VPN is incorporated in <span class="highlight">Switzerland</span>. This allows our users to benefit from some of the strongest privacy laws in the world, remaining outside the jurisdiction of "14 Eyes" surveillance alliances.</p>
+            </section>
+
+            <section>
+                <h2>5. Changes to This Policy</h2>
+                <p>We may update this policy occasionally. If we make significant changes that affect your rights, we will notify you via the email address associated with your account.</p>
+            </section>
+        </main>
+
+        <aside class="summary-box">
+            <h3>The TL;DR Version</h3>
+            
+            <div class="summary-item">
+                <i class="fas fa-ban"></i>
+                <p><strong>Zero Logs:</strong> We don't know who you are or what you do online.</p>
+            </div>
+
+            <div class="summary-item">
+                <i class="fas fa-server"></i>
+                <p><strong>Diskless Servers:</strong> Data exists only in RAM and disappears on reboot.</p>
+            </div>
+
+            <div class="summary-item">
+                <i class="fas fa-shield-alt"></i>
+                <p><strong>Swiss Laws:</strong> Protected by the world's best privacy regulations.</p>
+            </div>
+
+            <div class="summary-item">
+                <i class="fas fa-user-check"></i>
+                <p><strong>You Own Your Data:</strong> We never sell or trade your email address.</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer style="background: var(--dark); color: white; padding: 40px; text-align: center;">
+        <p>&copy; 2026 Toogle VPN. Privacy is not a crime.</p>
+    </footer>
+
+</body>
+</html>
