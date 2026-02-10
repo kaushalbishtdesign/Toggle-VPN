@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toogle VPN | Secure Your Digital Footprint</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
+    <script src="script.js" defer></script>
+
+</head>
+<style>
+    :root {
+            --primary: #f8961e;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #f4f4f4;
+            --text: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { line-height: 1.6; color: var(--text); scroll-behavior: smooth; }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 10%;
+            background: var(--dark);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { Display:Flex;
+            align-items: Center;
+            gap: 10Px;
+            text-decoration: none;
+            font-weight:bold;
+
+            color: var(--primary); font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li a { color: white; text-decoration: none; margin: 0 15px; transition: 0.3s; }
+        .nav-links li a:hover { color: var(--primary); }
+        .btn-cta { background: var(--primary); color: white !important; padding: 8px 20px; border-radius: 5px; font-weight: bold; }
+        .logo-img{
+            height: 30px;
+            width: auto;
+            
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; }
+
+        /* Generic Section Styling */
+        section { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--dark); }
+        .section-title .underline { width: 60px; height: 4px; background: var(--primary); margin: 10px auto; }
+
+        /* Why Use Us & Features */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .card { padding: 30px; text-align: center; background: var(--gray); border-radius: 10px; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+
+        /* How it Works */
+        .how-it-works { background: var(--dark); color: white; }
+        .how-it-works .section-title h2 { color: white; }
+        .step { text-align: center; position: relative; }
+        .step-num { background: var(--primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; }
+
+        /* Pricing */
+        .pricing-card { border: 2px solid #ddd; position: relative; overflow: hidden; }
+        .pricing-card.popular { border-color: var(--primary); }
+        .badge { background: var(--primary); color: white; position: absolute; top: 10px; right: -30px; transform: rotate(45deg); width: 120px; text-align: center; font-size: 0.8rem; }
+        .price { font-size: 3rem; font-weight: bold; color: var(--dark); }
+        .price span { font-size: 1rem; color: #777; }
+
+        /* Trust Section */
+        .trust { background: var(--gray); text-align: center; }
+        .trust-logos { display: flex; justify-content: space-around; flex-wrap: wrap; opacity: 0.6; filter: grayscale(100%); }
+        .trust-logos i { font-size: 3rem; margin: 20px; }
+
+        /* FAQ */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { margin-bottom: 15px; border-bottom: 1px solid #ddd; padding: 10px; cursor: pointer; }
+        .faq-question { display: flex; justify-content: space-between; font-weight: bold; }
+        .faq-answer { display: none; padding-top: 10px; color: #666; }
+
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 50px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        footer a { color: #bbb; text-decoration: none; display: block; margin-bottom: 10px; }
+        footer a:hover { color: var(--primary); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+</style>
+<body>
+
+    <nav>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="toggle VPN LOGO" class="logo-img">
+            Toggle VPN
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#Privacy">Privacy & Condition</a></li>
+            <li><a href="#Pricing">Pricing</a></li>
+            <li><a href="#About Us">About Us</a></li>
+            <li><a href="#" class="btn-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Privacy shouldn't be a puzzle.</h1>
+        <p>Toggle your anonymity on with one click. Toogle VPN offers lightning-fast speeds and military-grade encryption for all your devices.</p>
+        <a href="#pricing" class="btn-cta" style="padding: 15px 40px; font-size: 1.1rem; text-decoration: none;">Secure My Connection</a>
+    </header>
+
+    <section id="why">
+        <div class="section-title">
+            <h2>Why Toogle VPN?</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-user-secret"></i>
+                <h3>Zero Logging</h3>
+                <p>We don't track, collect, or share your private data. Your business is yours alone.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bolt"></i>
+                <h3>Ultra Speed</h3>
+                <p>10Gbps servers optimized for streaming, gaming, and large downloads.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-globe"></i>
+                <h3>Global Access</h3>
+                <p>Bypass geo-restrictions with 5000+ servers in 90+ countries.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how">
+        <div class="section-title">
+            <h2>3 Steps to Privacy</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="grid">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>Pick a Plan</h3>
+                <p>Choose the subscription that fits your lifestyle.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>Download App</h3>
+                <p>Install Toogle on Windows, Mac, iOS, or Android.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>Toggle On</h3>
+                <p>Hit the big orange button and surf securely.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="section-title">
+            <h2>Power Features</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Kill Switch</h3>
+                <p>Instantly blocks internet if VPN drops to prevent data leaks.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-random"></i>
+                <h3>Split Tunneling</h3>
+                <p>Choose which apps use the VPN and which use local internet.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-layer-group"></i>
+                <h3>Multi-Hop</h3>
+                <p>Route your traffic through two servers for double encryption.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="section-title">
+            <h2>Simple Pricing</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="grid">
+            <div class="card pricing-card">
+                <h3>Monthly</h3>
+                <div class="price">$12.99<span>/mo</span></div>
+                <p>Billed monthly</p>
+                <a href="#" class="btn-cta" style="display:block; margin-top:20px; text-decoration:none;">Buy Now</a>
+            </div>
+            <div class="card pricing-card popular">
+                <div class="badge">BEST VALUE</div>
+                <h3>2 Year Plan</h3>
+                <div class="price">$2.99<span>/mo</span></div>
+                <p>Save 77% - $71.76 billed every 2 years</p>
+                <a href="#" class="btn-cta" style="display:block; margin-top:20px; text-decoration:none;">Buy Now</a>
+            </div>
+            <div class="card pricing-card">
+                <h3>Yearly</h3>
+                <div class="price">$4.50<span>/mo</span></div>
+                <p>Billed annually</p>
+                <a href="#" class="btn-cta" style="display:block; margin-top:20px; text-decoration:none;">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust">
+        <h3>Trusted by 5+ Million Users Globally</h3>
+        <div class="trust-logos">
+            <i class="fab fa-google-pay"></i>
+            <i class="fab fa-apple-pay"></i>
+            <i class="fab fa-paypal"></i>
+            <i class="fab fa-bitcoin"></i>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Does Toogle VPN slow down my internet? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">All VPNs add a slight overhead, but Toogle's 10Gbps infrastructure makes the difference unnoticeable for streaming and gaming.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I use it on multiple devices? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Yes! One Toogle account allows for up to 10 simultaneous connections.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is there a money-back guarantee? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Absolutely. We offer a risk-free 30-day money-back guarantee.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <h2 style="color:var(--primary)">TOOGLE VPN</h2>
+            <p>Your ultimate shield in the digital world.</p>
+        </div>
+        <div>
+            <h4>Product</h4>
+            <a href="#">Download</a>
+            <a href="#">Pricing</a>
+            <a href="#">Servers</a>
+        </div>
+        <div>
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <a href="#">Help Center</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Status</a>
+        </div>
+        <script>
+            const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('i');
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                } else {
+                    answer.style.display = 'block';
+                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                }
+            });
+        });
+
+        // Simple scroll reveal effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = '#000';
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+            } else {
+                nav.style.background = 'var(--dark)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+        </script>
+    </footer>
+</body>
+</html>
